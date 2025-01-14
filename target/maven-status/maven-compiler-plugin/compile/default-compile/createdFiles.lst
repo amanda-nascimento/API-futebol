@@ -1,0 +1,6 @@
+org/meli/crud/service/ClubeService.class
+org/meli/crud/model/Clube.class
+org/meli/crud/repository/ClubeRepository.class
+org/meli/crud/dto/ClubeDTO.class
+org/meli/crud/CrudApplication.class
+org/meli/crud/controller/ClubeController.class
