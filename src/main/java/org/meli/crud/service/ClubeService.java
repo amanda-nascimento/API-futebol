@@ -65,6 +65,33 @@ public class ClubeService {
         }
     }
 
+    public boolean deactivateClube(Long id) {
+        if(clubeRepository.existsById(id)) {
+            Clube clube = clubeRepository.findById(id).get();
+            clube.setAtivo(false);
+            clubeRepository.save(clube);
+            return true;
+        }
+        return false;
+    }
+
+    public ClubeDTO getClube(Long id) {
+
+        Clube clube = clubeRepository.findById(id).get();
+        ClubeDTO clubeDTO = new ClubeDTO();
+        clubeDTO.setNome(clube.getNome());
+        clubeDTO.setEstado(clube.getEstado());
+        clubeDTO.setFundacao(clube.getFundacao());
+        clubeDTO.setAtivo(clube.isAtivo());
+
+        return clubeDTO;
+    }
+
+
+
+
+    //MÉTODOS DE VALIDACAO
+
     public Boolean validarNome(String nome) {
         return nome != null && nome.length() > 3;
     }
