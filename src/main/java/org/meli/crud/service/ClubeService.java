@@ -47,21 +47,27 @@ public class ClubeService {
         if(clubeRepository.existsById(id)) {
             Clube clube = clubeRepository.findById(id).get();
 
-            if(!clubeRepository.existsByNomeAndEstado(clubeDTO.getNome(), clubeDTO.getEstado()) && clube.getId().equals(id)) {
-                if(!clubeDTO.getNome().equals(clube.getNome()) && !clubeDTO.getNome().isBlank()) {
-                    clube.setNome(clubeDTO.getNome());
-                }
-                if(!clubeDTO.getEstado().equals(clube.getEstado()) && !clubeDTO.getEstado().isBlank()) {
-                    clube.setEstado(clubeDTO.getEstado());
-                }
+            if(!clubeDTO.getNome().equals(clube.getNome()) && !clubeDTO.getNome().isBlank()) {
+                clube.setNome(clubeDTO.getNome());
+            }
+            if(!clubeDTO.getEstado().equals(clube.getEstado()) && !clubeDTO.getEstado().isBlank()) {
+                clube.setEstado(clubeDTO.getEstado());
+            }
 
-                if(!clubeDTO.getFundacao().equals(clube.getFundacao())) {
-                    clube.setFundacao(clubeDTO.getFundacao());
-                }
+            if(!clubeDTO.getFundacao().equals(clube.getFundacao())) {
+                clube.setFundacao(clubeDTO.getFundacao());
+            }
+
+            if(clubeRepository.existsByNomeAndEstado(clubeDTO.getNome(), clubeDTO.getEstado()) ) {
                 clubeRepository.save(clube);
             }
             else{
-                throw new ResponseStatusException(HttpStatus.CONFLICT, "Já existe um clube cadastrado com essas características.");
+                if(clube.getId().equals(id)){
+                    clubeRepository.save(clube);
+                }
+                else{
+                    throw new ResponseStatusException(HttpStatus.CONFLICT, "Já existe um clube cadastrado com essas características.");
+                }
             }
         }
         else{

@@ -25,7 +25,7 @@ public class ClubeController {
         return new ResponseEntity<>("O clube foi criado com sucesso!", HttpStatus.CREATED);
     }
 
-    @PutMapping("update/{id}")
+    @PutMapping("atualizar/{id}")
     public ResponseEntity<String> updateClube(@RequestBody ClubeDTO clube, @PathVariable String id) {
         this.clubeService.updateClube(clube, Long.valueOf(id));
         return new ResponseEntity<>("O clube foi atualizado com sucesso!", HttpStatus.OK);
@@ -46,7 +46,7 @@ public class ClubeController {
 
     }
 
-    @GetMapping("/")
+    @GetMapping("listar/")
     public ResponseEntity<List<ClubeDTO>> getAllClube() {
         List<ClubeDTO> listaClubes = this.clubeService.getAllClubes() ;
         return new ResponseEntity<>(listaClubes, HttpStatus.OK);
