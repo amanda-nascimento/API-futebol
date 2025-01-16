@@ -5,8 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baac4c32-7544-4cd8-9de1-a9511d852383" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/ClubeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/ClubeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/CrudApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/controller/ClubeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/dto/ClubeDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/dto/ClubeDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/exception/ConflitosDadosException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/exception/ErrosDeBaseDeDados.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/exception/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/model/Clube.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/model/Clube.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/repository/ClubeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/repository/ClubeRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/service/ClubeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/crud-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/crud-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.meli.crud.CrudApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.meli.crud.CrudApplicationTests.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,21 +36,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "amanda-nascimento"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;amanda-nascimento&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/amanda-nascimento/API-futebol.git",
-    "accountId": "d317aca1-bee6-49a0-9d04-d9b9bc530539"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/amanda-nascimento/API-futebol.git&quot;,
+    &quot;accountId&quot;: &quot;d317aca1-bee6-49a0-9d04-d9b9bc530539&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2rgJfnZWA78UacMMaog7QkeIqYj" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,7 +66,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.CrudApplication.executor": "Run",
+    "Spring Boot.CrudApplication.executor": "Debug",
     "git-widget-placeholder": "#1 on developer",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/amdnasciment/Documents/GitHub/API-futebol",
@@ -57,8 +77,8 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "advanced.settings",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -74,14 +94,25 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
-    <configuration name="CrudApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="CrudApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="crud" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.meli.crud.CrudApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.meli.crud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.CrudApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -99,11 +130,55 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736974890569</updated>
-      <workItem from="1736974891642" duration="809000" />
+      <workItem from="1736974891642" duration="4818000" />
+      <workItem from="1737033139945" duration="14902000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/service/ClubeService.java</url>
+          <line>71</line>
+          <properties class="org.meli.crud.service.ClubeService" method="deactivateClube">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java</url>
+          <line>28</line>
+          <properties class="org.meli.crud.controller.ClubeController" method="updateClube">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

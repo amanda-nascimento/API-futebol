@@ -5,9 +5,12 @@ import org.meli.crud.exception.ConflitosDadosException;
 import org.meli.crud.exception.ErrosDeBaseDeDados;
 import org.meli.crud.model.Clube;
 import org.meli.crud.repository.ClubeRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -19,31 +22,32 @@ public class ClubeService {
     }
 
     public void createClube(ClubeDTO clubeDTO) {
-        //o controller lida com o DTO [clubeDTO] (entrada de dados da requisição)
-        //o service transforma esse DTO em uma entidade (Clube) antes de salvar no banco de dados
-        Clube clube = new Clube();
+        validarNome(clubeDTO.getNome());
+        validarEstado(clubeDTO.getEstado());
+        validarDataFundacao(clubeDTO.getFundacao());
 
-        clube.setNome(clubeDTO.getNome());
-        clube.setEstado(clubeDTO.getEstado());
-        clube.setAtivo(clubeDTO.isAtivo());
-        clube.setFundacao(clubeDTO.getFundacao());
-
-        // Salvar o clube no banco
         if(!clubeRepository.existsByNomeAndEstado(clubeDTO.getNome(), clubeDTO.getEstado())) {
+            Clube clube = new Clube();
+            clube.setNome(clubeDTO.getNome());
+            clube.setEstado(clubeDTO.getEstado());
+            clube.setAtivo(clubeDTO.isAtivo());
+            clube.setFundacao(clubeDTO.getFundacao());
             this.clubeRepository.save(clube);
         }
         else{
-            throw new ConflitosDadosException("Já existe um clube com as mesmas características cadastrado.");
+            throw new ResponseStatusException(HttpStatus.CONFLICT , "Já existe um clube com as mesmas características cadastrado.");
         }
     }
 
     public void updateClube(ClubeDTO clubeDTO, Long id) {
+        validarNome(clubeDTO.getNome());
+        validarEstado(clubeDTO.getEstado());
+        validarDataFundacao(clubeDTO.getFundacao());
+
         if(clubeRepository.existsById(id)) {
-            //recuperar objeto
             Clube clube = clubeRepository.findById(id).get();
 
-            //PARA REFLEXAO E REFATORACAO: se eu tentar mudar os dados que nao sejam nome e estado, ele dará conflito porque ele apontará para ele mesmo no banco e nao permitira a atualizacao.
-            if(clubeRepository.existsByNomeAndEstado(clubeDTO.getNome(), clubeDTO.getEstado()) && clubeRepository.existsById(id)) {
+            if(!clubeRepository.existsByNomeAndEstado(clubeDTO.getNome(), clubeDTO.getEstado()) && clube.getId().equals(id)) {
                 if(!clubeDTO.getNome().equals(clube.getNome()) && !clubeDTO.getNome().isBlank()) {
                     clube.setNome(clubeDTO.getNome());
                 }
@@ -57,56 +61,83 @@ public class ClubeService {
                 clubeRepository.save(clube);
             }
             else{
-                throw new ConflitosDadosException("Já existe um clube com as mesmas características cadastrado.");
+                throw new ResponseStatusException(HttpStatus.CONFLICT, "Já existe um clube cadastrado com essas características.");
             }
         }
         else{
-            throw new ErrosDeBaseDeDados("O clube indicado nao existe na base de dados");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND , "O clube não foi encontrado na base de dados.");
         }
     }
 
-    public boolean deactivateClube(Long id) {
+    public void deactivateClube(Long id) {
         if(clubeRepository.existsById(id)) {
             Clube clube = clubeRepository.findById(id).get();
             clube.setAtivo(false);
             clubeRepository.save(clube);
-            return true;
         }
-        return false;
+        else{
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND , "O clube não foi encontrado na base de dados.");
+        }
     }
 
     public ClubeDTO getClube(Long id) {
+        if(clubeRepository.existsById(id)) {
+            Clube clube = clubeRepository.findById(id).get();
+            ClubeDTO clubeDTO = new ClubeDTO();
+            clubeDTO.setNome(clube.getNome());
+            clubeDTO.setEstado(clube.getEstado());
+            clubeDTO.setFundacao(clube.getFundacao());
+            clubeDTO.setAtivo(clube.isAtivo());
+            return clubeDTO;
+        }
+        else{
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND , "O clube não foi encontrado na base de dados.");
+        }
 
-        Clube clube = clubeRepository.findById(id).get();
-        ClubeDTO clubeDTO = new ClubeDTO();
-        clubeDTO.setNome(clube.getNome());
-        clubeDTO.setEstado(clube.getEstado());
-        clubeDTO.setFundacao(clube.getFundacao());
-        clubeDTO.setAtivo(clube.isAtivo());
 
-        return clubeDTO;
     }
 
+    public List<ClubeDTO> getAllClubes() {
+        List<Clube> clubes = clubeRepository.findAll();
+        List<ClubeDTO> clubeDTOs = new ArrayList<>();
+        if (this.clubeRepository.findAll().toArray().length > 0) {
+            for(Clube clube : clubes) {
+                ClubeDTO clubeDTO = new ClubeDTO();
+                clubeDTO.setNome(clube.getNome());
+                clubeDTO.setEstado(clube.getEstado());
+                clubeDTO.setFundacao(clube.getFundacao());
+                clubeDTO.setAtivo(clube.isAtivo());
+                clubeDTOs.add(clubeDTO);
+            }
+        }
+        return clubeDTOs;
 
+    }
 
 
     //MÉTODOS DE VALIDACAO
-
-    public Boolean validarNome(String nome) {
-        return nome != null && nome.length() > 3;
+    public void validarNome(String nome) {
+        if(nome == null || nome.length() < 3) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O nome deve ser preenchido contendo ao menos 3 caracteres.");
+        }
     }
 
-    public boolean validarEstado(String estado) {
+    public void validarEstado(String estado) {
         List<String> estados = List.of(
                 "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"
         );
 
         boolean isSiglaExistente = estados.contains(estado.toUpperCase());
 
-        return isSiglaExistente && estado.length() == 2;
+        if (!isSiglaExistente && estado.length() != 2){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O estado deve conter duas letras e deve ser um estado válido, como SP.");
+        }
     }
 
-    public Boolean validarDataFundacao(LocalDate dataFundacao) {
-        return dataFundacao != null && !dataFundacao.isAfter(LocalDate.now());
+    public void validarDataFundacao(LocalDate dataFundacao) {
+        if(dataFundacao == null || dataFundacao.isAfter(LocalDate.now())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "A data deve ser menor ou igual a data de hoje.");
+        }
     }
+
 }
