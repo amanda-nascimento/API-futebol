@@ -1,0 +1,62 @@
+[
+  {
+    "nome": "São Paulo",
+    "estado": "SP",
+    "fundacao": "1930-01-25",
+    "ativo": true
+  },
+  {
+    "nome": "Fluminense",
+    "estado": "RJ",
+    "fundacao": "1902-07-21",
+    "ativo": true
+  },
+  {
+    "nome": "Grêmio",
+    "estado": "RS",
+    "fundacao": "1903-09-15",
+    "ativo": true
+  },
+  {
+    "nome": "Cruzeiro",
+    "estado": "MG",
+    "fundacao": "1921-01-02",
+    "ativo": true
+  },
+  {
+    "nome": "Internacional",
+    "estado": "RS",
+    "fundacao": "1909-04-04",
+    "ativo": true
+  },
+  {
+    "nome": "Atlético Mineiro",
+    "estado": "MG",
+    "fundacao": "1908-03-25",
+    "ativo": true
+  },
+  {
+    "nome": "Santos",
+    "estado": "SP",
+    "fundacao": "1912-04-14",
+    "ativo": true
+  },
+  {
+    "nome": "Vasco da Gama",
+    "estado": "RJ",
+    "fundacao": "1898-08-21",
+    "ativo": true
+  },
+  {
+    "nome": "Botafogo",
+    "estado": "RJ",
+    "fundacao": "1904-08-12",
+    "ativo": true
+  },
+  {
+    "nome": "Corinthians",
+    "estado": "SP",
+    "fundacao": "1910-09-01",
+    "ativo": true
+  }
+]
