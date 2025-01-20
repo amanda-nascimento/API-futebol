@@ -146,4 +146,10 @@ public class ClubeService {
         }
     }
 
+    public void validarDataFundacaoEpartida(LocalDate dataFundacao, LocalDate dataPartida) {
+        if(dataFundacao == null || dataFundacao.isAfter(LocalDate.now())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "A data deve ser menor ou igual a data de hoje.");
+        }
+    }
+
 }

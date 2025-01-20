@@ -17,15 +17,15 @@ public class Clube {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 50)
+    @Column(length = 50, nullable = false)
     private String nome;
 
-    @Column(length = 2)
+    @Column(length = 2, nullable = false)
     private String estado;
 
-    @Column()
+    @Column(nullable = false)
     private LocalDate fundacao;
 
-    @Column()
+    @Column(nullable = false)
     private boolean ativo;
 }
