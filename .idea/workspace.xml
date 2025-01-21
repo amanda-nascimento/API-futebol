@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baac4c32-7544-4cd8-9de1-a9511d852383" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/ENUM/TimeVencedor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PartidaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/dto/PartidaDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/model/Partida.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/repository/PartidaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/PartidaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/model/Clube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/model/Clube.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/ClubeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/ClubeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/model/Clube.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/model/Clube.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/service/ClubeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/service/ClubeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PartidaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PartidaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/repository/ClubeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/repository/ClubeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/EstadioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/EstadioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/PartidaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/PartidaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/service/PartidaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/service/PartidaService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +60,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.CrudApplication.executor": "Run",
+    "Spring Boot.CrudApplication.executor": "Debug",
     "git-widget-placeholder": "developer",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/amdnasciment/Documents/GitHub/API-futebol",
@@ -131,7 +127,7 @@
       <workItem from="1736974891642" duration="4818000" />
       <workItem from="1737033139945" duration="25433000" />
       <workItem from="1737116896466" duration="7034000" />
-      <workItem from="1737137670322" duration="34228000" />
+      <workItem from="1737137670322" duration="49286000" />
     </task>
     <servers />
   </component>
@@ -199,7 +195,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java</url>
-          <line>49</line>
+          <line>48</line>
           <properties class="org.meli.crud.controller.ClubeController" method="getAllClube">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -217,7 +213,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PartidaController.java</url>
-          <line>22</line>
+          <line>21</line>
           <properties class="org.meli.crud.controller.PartidaController" method="createPartida">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -226,12 +222,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/service/PartidaService.java</url>
-          <line>115</line>
+          <line>205</line>
           <properties class="org.meli.crud.service.PartidaService" method="verificarDisponibilidadeEstadio">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/service/PartidaService.java</url>
+          <line>33</line>
+          <properties class="org.meli.crud.service.PartidaService" method="createPartida">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java</url>
@@ -240,13 +245,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/service/PartidaService.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/service/PartidaService.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="24" />
+          <line>39</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

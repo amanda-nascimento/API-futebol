@@ -62,7 +62,7 @@ public class EstadioService {
             return estadioDTO;
         }
         else{
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND , "O clube não foi encontrado na base de dados.");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND , "O estadio não foi encontrado na base de dados.");
         }
     }
 

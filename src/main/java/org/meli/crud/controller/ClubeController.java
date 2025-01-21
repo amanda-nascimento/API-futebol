@@ -36,7 +36,6 @@ public class ClubeController {
     public ResponseEntity<String> deactivateClube(@PathVariable String id) {
         this.clubeService.deactivateClube(Long.valueOf(id));
         return new ResponseEntity<>("O clube foi inativado com sucesso!", HttpStatus.NO_CONTENT);
-
     }
 
     @GetMapping("/{id}")
