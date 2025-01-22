@@ -42,10 +42,8 @@ public class ClubeController {
     public ResponseEntity<ClubeDTO> getClube(@PathVariable String id) {
         ClubeDTO clubeDTO = this.clubeService.getClube(Long.valueOf(id));
         return new ResponseEntity<>(clubeDTO, HttpStatus.OK);
-
     }
-
-    @GetMapping("listar/")
+    @GetMapping("/listar/")
     public ResponseEntity<List<ClubeDTO>> getAllClube() {
         List<ClubeDTO> listaClubes = this.clubeService.getAllClubes() ;
         return new ResponseEntity<>(listaClubes, HttpStatus.OK);

@@ -18,7 +18,6 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -97,23 +96,26 @@ public class PartidaService {
     }
 
     public PartidaDTO getPartida(Long id) {
-        if(partidaRepository.existsById(id)) {
-            Partida partida = partidaRepository.findById(id).get();
-            PartidaDTO partidaDTO = new PartidaDTO();
-            Clube timeCasa = clubeRepository.findById(partida.getTimeCasa());
-            Clube timeVisitante = clubeRepository.findById(partida.getTimeVisitante());
-            Estadio estadio = estadioRepository.findById(partida.getEstadio().getId()).get();
-            partidaDTO.setIdTimeVisitante(timeVisitante.getId());
-            partidaDTO.setIdTimeCasa(timeCasa.getId());
-            partidaDTO.setIdEstadio(estadio.getId());
-            partidaDTO.setDataHoraPartida(partida.getDataHoraPartida());
-            partidaDTO.setSaldoGolsTimeCasa(partida.getSaldoGolTimeCasa());
-            partidaDTO.setSaldoGolsTimeVisitante(partida.getSaldoGolTimeVisitante());
-            return partidaDTO;
+        Partida partida = partidaRepository.findById(id).orElse(null);
+        if (partida == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "A partida nao foi encontrada.");
         }
-        else{
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND , "A partida não foi encontrado na base de dados.");
-        }
+
+        PartidaDTO partidaDTO = new PartidaDTO();
+
+        Clube timeCasa = clubeRepository.findById(partida.getTimeCasa().getId()).orElse(null);
+        Clube timeVisitante = clubeRepository.findById(partida.getTimeVisitante().getId()).orElse(null);
+        Estadio estadio = estadioRepository.findById(partida.getEstadio().getId()).orElse(null);
+
+        partidaDTO.setIdTimeVisitante(timeVisitante != null ? timeVisitante.getId() : null);
+        partidaDTO.setIdTimeCasa(timeCasa != null ? timeCasa.getId() : null);
+        partidaDTO.setIdEstadio(estadio != null ? estadio.getId() : null);
+        partidaDTO.setDataHoraPartida(partida.getDataHoraPartida());
+        partidaDTO.setSaldoGolsTimeCasa(partida.getSaldoGolTimeCasa());
+        partidaDTO.setSaldoGolsTimeVisitante(partida.getSaldoGolTimeVisitante());
+        partidaDTO.setResultado(partida.getResultado());
+
+        return partidaDTO;
     }
 
     public List<PartidaDTO> getAllPartidas() {
@@ -122,16 +124,17 @@ public class PartidaService {
         if (this.partidaRepository.findAll().toArray().length > 0) {
             for(Partida item : partidas) {
                 PartidaDTO partidaDTO = new PartidaDTO();
-                Clube timeCasa = clubeRepository.findById(item.getTimeCasa());
-                Clube timeVisitante = clubeRepository.findById(item.getTimeVisitante());
-                Estadio estadio = estadioRepository.findById(item.getEstadio().getId()).get();
+                Clube timeCasa = clubeRepository.findById(item.getTimeCasa().getId()).orElse(null);
+                Clube timeVisitante = clubeRepository.findById(item.getTimeVisitante().getId()).orElse(null);
+                Estadio estadio = estadioRepository.findById(item.getEstadio().getId()).orElse(null);
 
-                partidaDTO.setIdTimeCasa(timeCasa.getId());
-                partidaDTO.setIdTimeVisitante(timeVisitante.getId());
-                partidaDTO.setIdEstadio(estadio.getId());
+                partidaDTO.setIdTimeVisitante(timeVisitante != null ? timeVisitante.getId() : null);
+                partidaDTO.setIdTimeCasa(timeCasa != null ? timeCasa.getId() : null);
+                partidaDTO.setIdEstadio(estadio != null ? estadio.getId() : null);
                 partidaDTO.setDataHoraPartida(item.getDataHoraPartida());
                 partidaDTO.setSaldoGolsTimeCasa(item.getSaldoGolTimeCasa());
-                partidaDTO.setSaldoGolsTimeCasa(item.getSaldoGolTimeVisitante());
+                partidaDTO.setSaldoGolsTimeVisitante(item.getSaldoGolTimeVisitante());
+                partidaDTO.setResultado(item.getResultado());
                 partidasDTOs.add(partidaDTO);
             }
         }
@@ -150,8 +153,7 @@ public class PartidaService {
     }
 
     public void validarTimes(Long idTimeCasa, Long idTimeVisitante) {
-        Clube timeCasa = clubeRepository.findById(idTimeCasa).get();
-        Clube timeVisitante = clubeRepository.findById(idTimeVisitante).get();
+
 
         if(!clubeRepository.existsById(idTimeCasa)) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O Time da Casa nao foi encontrado na base de dados.");
@@ -162,8 +164,12 @@ public class PartidaService {
         if(idTimeVisitante.equals(idTimeCasa)) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Os dois times nao podem ser iguais.");
         }
-        if(!timeCasa.isAtivo() && !timeVisitante.isAtivo()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Os times envolvidos precisam estar ativos.");
+        if(clubeRepository.existsById(idTimeCasa) && clubeRepository.existsById(idTimeVisitante)) {
+            Clube timeCasa = clubeRepository.findById(idTimeCasa).get();
+            Clube timeVisitante = clubeRepository.findById(idTimeVisitante).get();
+            if(!timeCasa.isAtivo() && !timeVisitante.isAtivo()) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Os times envolvidos precisam estar ativos.");
+            }
         }
     }
 
@@ -189,19 +195,18 @@ public class PartidaService {
         Optional<Partida> ultimaPartidaTimeCasa = this.partidaRepository.findTopByTimeCasaIdOrderByDataHoraPartidaDesc(idTimeCasa);
         Optional<Partida> ultimaPartidaTimeVisitante = this.partidaRepository.findTopByTimeVisitanteIdOrderByDataHoraPartidaDesc(idTimeVisitante);
 
-
         if (ultimaPartidaTimeCasa.isPresent() && ultimaPartidaTimeVisitante.isPresent()) {
             LocalDateTime ultimaDataCasa = ultimaPartidaTimeCasa.get().getDataHoraPartida();
-            LocalDateTime ultimaDataVisitante = ultimaPartidaTimeVisitante.get().getDataHoraPartida();
-
             Duration durationTimeCasa = Duration.between(ultimaDataCasa, dataHora);
+            LocalDateTime ultimaDataVisitante = ultimaPartidaTimeVisitante.get().getDataHoraPartida();
             Duration durationTimeVisitante = Duration.between(ultimaDataVisitante, dataHora);
 
-            if (durationTimeCasa.abs().toHours() < 48 && durationTimeVisitante.abs().toHours() < 48) {
-                throw new ResponseStatusException(HttpStatus.CONFLICT, "A data e hora da partida precisam ser maior que 48 horas em relação à última partida jogada pelos times envolvidos.");
+            if (durationTimeCasa.toHours() < 48 || durationTimeVisitante.toHours() < 48) {
+                throw new ResponseStatusException(HttpStatus.CONFLICT, "A data e hora da partida precisam ser maior que 48 horas em relação à última partida dos times.");
             }
         }
     }
+
 
     public void verificarDisponibilidadeEstadio(Long idEstadio, LocalDateTime dataHoraPartida) {
         Optional<Partida> ultimaPartidaEstadio = this.partidaRepository.findTopByEstadioIdOrderByDataHoraPartidaDesc(idEstadio);

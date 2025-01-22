@@ -1,8 +1,6 @@
 package org.meli.crud.controller;
 
-import org.meli.crud.dto.ClubeDTO;
 import org.meli.crud.dto.EstadioDTO;
-import org.meli.crud.model.Estadio;
 import org.meli.crud.service.EstadioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,8 +35,14 @@ public class EstadioController {
     }
 
     @GetMapping("/listar")
-    public ResponseEntity<List<EstadioDTO>> getAllClube() {
+    public ResponseEntity<List<EstadioDTO>> getAllEstadios() {
         List<EstadioDTO> lista = this.estadioService.getAllEstadios() ;
         return new ResponseEntity<>(lista, HttpStatus.OK);
     }
+
+//    @DeleteMapping("inativar/{id}")
+//    public ResponseEntity<String> deactivateClube(@PathVariable String id) {
+//        this.estadioService.deleteEstadio(Long.valueOf(id));
+//        return new ResponseEntity<>("O estádio foi excluído com sucesso!", HttpStatus.NO_CONTENT);
+//    }
 }

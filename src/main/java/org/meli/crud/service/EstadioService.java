@@ -66,6 +66,16 @@ public class EstadioService {
         }
     }
 
+    public void deleteEstadio(Long id) {
+        if(estadioRepository.existsById(id)) {
+            Estadio estadio = estadioRepository.findById(id).get();
+            estadioRepository.delete(estadio);
+        }
+        else{
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND , "O Estadio não foi encontrado na base de dados.");
+        }
+    }
+
     //MÉTODOS DE VALIDACAO
     public void validarNome(String nome) {
         if(nome == null || nome.length() < 3) {

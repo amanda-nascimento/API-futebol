@@ -35,7 +35,8 @@ public class ClubeService {
             this.clubeRepository.save(clube);
         }
         else{
-            throw new ResponseStatusException(HttpStatus.CONFLICT , "Já existe um clube com as mesmas características cadastrado.");
+            throw new ConflitosDadosException("Já existe um clube com as mesmas características cadastrado.");
+//            throw new ResponseStatusException(HttpStatus.CONFLICT , "Já existe um clube com as mesmas características cadastrado.");
         }
     }
 
