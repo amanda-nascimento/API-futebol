@@ -1,4 +1,3 @@
-org/meli/crud/controller/PetController.class
 org/meli/crud/controller/PartidaController.class
 org/meli/crud/service/RetrospectoService$1.class
 org/meli/crud/model/Retrospecto.class
@@ -24,5 +23,6 @@ org/meli/crud/controller/RetrospectoController.class
 org/meli/crud/dto/RetrospectoDTO.class
 org/meli/crud/model/Pet.class
 org/meli/crud/exception/ErrosDeBaseDeDados.class
+org/meli/crud/config/SwaggerConfig.class
 org/meli/crud/CrudApplication.class
 org/meli/crud/controller/ClubeController.class

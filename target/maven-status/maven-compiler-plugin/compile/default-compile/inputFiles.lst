@@ -6,11 +6,11 @@
 /Users/amdnasciment/Documents/GitHub/API-futebol/src/main/java/org/meli/crud/dto/EstadioDTO.java
 /Users/amdnasciment/Documents/GitHub/API-futebol/src/main/java/org/meli/crud/service/RetrospectoService.java
 /Users/amdnasciment/Documents/GitHub/API-futebol/src/main/java/org/meli/crud/service/EstadioService.java
-/Users/amdnasciment/Documents/GitHub/API-futebol/src/main/java/org/meli/crud/controller/PetController.java
 /Users/amdnasciment/Documents/GitHub/API-futebol/src/main/java/org/meli/crud/dto/PartidaDTO.java
 /Users/amdnasciment/Documents/GitHub/API-futebol/src/main/java/org/meli/crud/controller/EstadioController.java
 /Users/amdnasciment/Documents/GitHub/API-futebol/src/main/java/org/meli/crud/ENUM/TimeVencedor.java
 /Users/amdnasciment/Documents/GitHub/API-futebol/src/main/java/org/meli/crud/service/ClubeService.java
+/Users/amdnasciment/Documents/GitHub/API-futebol/src/main/java/org/meli/crud/config/SwaggerConfig.java
 /Users/amdnasciment/Documents/GitHub/API-futebol/src/main/java/org/meli/crud/controller/RetrospectoController.java
 /Users/amdnasciment/Documents/GitHub/API-futebol/src/main/java/org/meli/crud/dto/RetrospectoDTO.java
 /Users/amdnasciment/Documents/GitHub/API-futebol/src/main/java/org/meli/crud/model/Pet.java

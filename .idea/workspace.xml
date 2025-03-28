@@ -5,7 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baac4c32-7544-4cd8-9de1-a9511d852383" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/config/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/EstadioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/EstadioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PartidaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PartidaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PetController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/ClubeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/ClubeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/meli/crud/ClubeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/meli/crud/ClubeServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/meli/crud/CrudApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/meli/crud/PetControllerTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/service/ClubeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/service/ClubeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/meli/crud/ClubeServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/meli/crud/ClubeServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/meli/crud/CrudApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/meli/crud/PetControllerTest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/meli/crud/PetControllerTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +76,8 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.ClubeServiceTest.executor": "Run",
+    "JUnit.ClubeServiceTest.testCreateClube_MissingName_ThrowsException.executor": "Run",
+    "JUnit.ClubeServiceTest.testCreateClube_Success.executor": "Debug",
     "JUnit.ClubeServiceTest.validaNomeClube_Error.executor": "Run",
     "JUnit.ClubeServiceTest.validarEstado_Error_2LetrasInvalido.executor": "Debug",
     "JUnit.ClubeServiceTest.validarEstado_Error_Invalido.executor": "Coverage",
@@ -79,7 +98,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.CrudApplication.executor": "Run",
+    "Spring Boot.CrudApplication.executor": "Debug",
     "git-widget-placeholder": "developer",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/amdnasciment/Documents/GitHub/API-futebol",
@@ -111,6 +130,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ClubeServiceTest.testCreateClube_MissingName_ThrowsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.meli.crud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.meli.crud" />
+      <option name="MAIN_CLASS_NAME" value="org.meli.crud.ClubeServiceTest" />
+      <option name="METHOD_NAME" value="testCreateClube_MissingName_ThrowsException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClubeServiceTest.testCreateClube_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.meli.crud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.meli.crud" />
+      <option name="MAIN_CLASS_NAME" value="org.meli.crud.ClubeServiceTest" />
+      <option name="METHOD_NAME" value="testCreateClube_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ClubeServiceTest.validaNomeClube_Error" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crud" />
       <extension name="coverage">
@@ -122,38 +173,6 @@
       <option name="PACKAGE_NAME" value="org.meli.crud" />
       <option name="MAIN_CLASS_NAME" value="org.meli.crud.ClubeServiceTest" />
       <option name="METHOD_NAME" value="validaNomeClube_Error" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClubeServiceTest.validarEstado_Error_2LetrasInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="crud" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.meli.crud.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.meli.crud" />
-      <option name="MAIN_CLASS_NAME" value="org.meli.crud.ClubeServiceTest" />
-      <option name="METHOD_NAME" value="validarEstado_Error_2LetrasInvalido" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClubeServiceTest.validarEstado_Error_Invalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="crud" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.meli.crud.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.meli.crud" />
-      <option name="MAIN_CLASS_NAME" value="org.meli.crud.ClubeServiceTest" />
-      <option name="METHOD_NAME" value="validarEstado_Error_Invalido" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -187,10 +206,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.CrudApplication" />
+        <item itemvalue="JUnit.ClubeServiceTest.testCreateClube_Success" />
         <item itemvalue="JUnit.ClubeServiceTest" />
+        <item itemvalue="JUnit.ClubeServiceTest.testCreateClube_MissingName_ThrowsException" />
         <item itemvalue="JUnit.ClubeServiceTest.validaNomeClube_Error" />
-        <item itemvalue="JUnit.ClubeServiceTest.validarEstado_Error_2LetrasInvalido" />
-        <item itemvalue="JUnit.ClubeServiceTest.validarEstado_Error_Invalido" />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +251,7 @@
       <workItem from="1741613227944" duration="1328000" />
       <workItem from="1741614946118" duration="2602000" />
       <workItem from="1741783516650" duration="8263000" />
-      <workItem from="1743108503938" duration="11655000" />
+      <workItem from="1743108503938" duration="16933000" />
     </task>
     <servers />
   </component>
@@ -255,7 +274,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/service/ClubeService.java</url>
-          <line>81</line>
+          <line>80</line>
           <properties class="org.meli.crud.service.ClubeService" method="deactivateClube">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -264,7 +283,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/EstadioController.java</url>
-          <line>24</line>
+          <line>29</line>
           <properties class="org.meli.crud.controller.EstadioController" method="createEstadio">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -273,7 +292,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/EstadioController.java</url>
-          <line>31</line>
+          <line>41</line>
           <properties class="org.meli.crud.controller.EstadioController" method="updateEstadio">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -282,7 +301,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/EstadioController.java</url>
-          <line>39</line>
+          <line>52</line>
           <properties class="org.meli.crud.controller.EstadioController" method="getEstadio">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -300,7 +319,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/EstadioController.java</url>
-          <line>47</line>
+          <line>62</line>
           <properties class="org.meli.crud.controller.EstadioController" method="getAllEstadios">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -309,7 +328,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PartidaController.java</url>
-          <line>26</line>
+          <line>29</line>
           <properties class="org.meli.crud.controller.PartidaController" method="createPartida">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -324,15 +343,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java</url>
-          <line>23</line>
-          <properties class="org.meli.crud.controller.ClubeController" method="createClube">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/service/PartidaService.java</url>
@@ -353,17 +363,8 @@
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java</url>
-          <line>48</line>
-          <properties class="org.meli.crud.controller.ClubeController" method="getClube">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PartidaController.java</url>
-          <line>58</line>
+          <line>73</line>
           <properties class="org.meli.crud.controller.PartidaController" method="deactivatePartida">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -371,35 +372,8 @@
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/org/meli/crud/PetControllerTests.java</url>
-          <line>68</line>
-          <properties class="org.meli.crud.PetControllerTest" method="testGetPets_400">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/org/meli/crud/PetControllerTests.java</url>
-          <line>44</line>
-          <properties class="org.meli.crud.PetControllerTest" method="testGetPets">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/org/meli/crud/PetControllerTests.java</url>
-          <line>58</line>
-          <properties class="org.meli.crud.PetControllerTest" method="testGetPets_201">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/org/meli/crud/ClubeServiceTest.java</url>
-          <line>70</line>
+          <line>80</line>
           <properties class="org.meli.crud.ClubeServiceTest" method="validarEstado_Error_Invalido">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -408,7 +382,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/service/ClubeService.java</url>
-          <line>132</line>
+          <line>131</line>
           <properties class="org.meli.crud.service.ClubeService" method="validarEstado">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -417,7 +391,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/org/meli/crud/ClubeServiceTest.java</url>
-          <line>50</line>
+          <line>60</line>
           <properties class="org.meli.crud.ClubeServiceTest" method="validarEstado_Error_2LetrasInvalido">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -426,16 +400,34 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/org/meli/crud/ClubeServiceTest.java</url>
-          <line>34</line>
+          <line>44</line>
           <properties class="org.meli.crud.ClubeServiceTest" method="validaNomeClube_Error">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/org/meli/crud/ClubeServiceTest.java</url>
+          <line>90</line>
+          <properties class="org.meli.crud.ClubeServiceTest" method="testCreateClube_Success">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/service/ClubeService.java</url>
+          <line>23</line>
+          <properties class="org.meli.crud.service.ClubeService" method="createClube">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java</url>
-          <line>39</line>
+          <line>38</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -470,23 +462,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/org/meli/crud/ClubeServiceTest.java</url>
-          <line>73</line>
+          <line>83</line>
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/org/meli/crud/ClubeServiceTest.java</url>
-          <line>53</line>
+          <line>63</line>
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/org/meli/crud/ClubeServiceTest.java</url>
-          <line>37</line>
+          <line>47</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Library/Java/JavaVirtualMachines/corretto-17.0.13/Contents/Home/lib/src.zip!/java.base/java/lang/NumberFormatException.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/config/SwaggerConfig.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/CrudApplication.java</url>
-          <line>6</line>
-          <option name="timeStamp" value="70" />
+          <line>9</line>
+          <option name="timeStamp" value="79" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
