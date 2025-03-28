@@ -5,44 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baac4c32-7544-4cd8-9de1-a9511d852383" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/springdoc_openapi_common.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PetController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/RetrospectoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/dto/RetrospectoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/model/Pet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/model/Retrospecto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/repository/RetrospectoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/RetrospectoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/meli/crud/ClubeServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/meli/crud/PetControllerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/EstadioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/EstadioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PartidaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PartidaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/ClubeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/ClubeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/EstadioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/EstadioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/PartidaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/PartidaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/meli/crud/CrudApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/meli/crud/CrudApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/controller/ClubeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/controller/ClubeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/controller/EstadioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/controller/EstadioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/controller/PartidaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/controller/PartidaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/service/ClubeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/service/ClubeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/service/EstadioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/service/EstadioService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/service/PartidaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/service/PartidaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/crud-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/crud-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/crud-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/crud-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-org.meli.crud.CrudApplicationTests.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/org.meli.crud.CrudApplicationTests.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/meli/crud/CrudApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/meli/crud/CrudApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +232,7 @@
       <workItem from="1741613227944" duration="1328000" />
       <workItem from="1741614946118" duration="2602000" />
       <workItem from="1741783516650" duration="8263000" />
-      <workItem from="1743108503938" duration="10983000" />
+      <workItem from="1743108503938" duration="11655000" />
     </task>
     <servers />
   </component>
@@ -519,6 +482,11 @@
           <url>file://$PROJECT_DIR$/src/test/java/org/meli/crud/ClubeServiceTest.java</url>
           <line>37</line>
           <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/CrudApplication.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="70" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
