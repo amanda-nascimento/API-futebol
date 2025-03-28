@@ -6,6 +6,7 @@ import org.meli.crud.dto.PartidaDTO;
 import org.meli.crud.model.Clube;
 import org.meli.crud.model.Estadio;
 import org.meli.crud.model.Partida;
+import org.meli.crud.model.Retrospecto;
 import org.meli.crud.repository.ClubeRepository;
 import org.meli.crud.repository.EstadioRepository;
 import org.meli.crud.repository.PartidaRepository;
@@ -29,8 +30,13 @@ public class PartidaService {
     private EstadioRepository estadioRepository;
     @Autowired
     private PartidaRepository partidaRepository;
+    @Autowired
+    private RetrospectoService retrospectoService;
 
     public void createPartida(PartidaDTO partidaDTO) {
+        if(partidaDTO.getIdTimeVisitante() == null || partidaDTO.getIdTimeVisitante() == 0 || partidaDTO.getIdTimeCasa() == null || partidaDTO.getIdTimeCasa() == 0 || partidaDTO.getResultado() == null || partidaDTO.getDataHoraPartida() == null ) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Os dados minimos sáo necessarios para criar uma partida. Campos esperados: idTimeVisitante, idTimeCasa, resultado, dataHoraPartida.");
+        }
         validarTimes(partidaDTO.getIdTimeCasa(), partidaDTO.getIdTimeVisitante());
         validarEstadio(partidaDTO.getIdEstadio());
         validarResultado(partidaDTO.getSaldoGolsTimeCasa(), partidaDTO.getSaldoGolsTimeVisitante());
@@ -64,10 +70,15 @@ public class PartidaService {
         partida.setDataHoraPartida(partidaDTO.getDataHoraPartida());
         partida.setSaldoGolTimeCasa(partidaDTO.getSaldoGolsTimeCasa());
         partida.setSaldoGolTimeVisitante(partidaDTO.getSaldoGolsTimeVisitante());
+
         this.partidaRepository.save(partida);
+        retrospectoService.recordRetrospecto(partida);
     }
 
     public void updatePartida(PartidaDTO partidaDTO, Long id) {
+        if(partidaDTO.getIdTimeVisitante() == null || partidaDTO.getIdTimeVisitante() == 0 || partidaDTO.getIdTimeCasa() == null || partidaDTO.getIdTimeCasa() == 0 || partidaDTO.getResultado() == null || partidaDTO.getDataHoraPartida() == null ) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Os dados minimos sáo necessarios para criar uma partida. Campos esperados: idTimeVisitante, idTimeCasa, resultado, dataHoraPartida.");
+        }
         validarTimes(partidaDTO.getIdTimeCasa(), partidaDTO.getIdTimeVisitante());
         validarEstadio(partidaDTO.getIdEstadio());
         validarResultado(partidaDTO.getSaldoGolsTimeCasa(), partidaDTO.getSaldoGolsTimeVisitante());
@@ -89,6 +100,7 @@ public class PartidaService {
             partida.setSaldoGolTimeCasa(partidaDTO.getSaldoGolsTimeCasa());
             partida.setSaldoGolTimeVisitante(partidaDTO.getSaldoGolsTimeVisitante());
             this.partidaRepository.save(partida);
+            retrospectoService.recordRetrospecto(partida);
         }
         else{
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "O id náo foi encontrado na base de dados de Partida.");
@@ -180,8 +192,8 @@ public class PartidaService {
     }
 
     public void validarResultado(Integer saldoGolTimeCasa, Integer saldoGolTimeVisitante) {
-        if(saldoGolTimeCasa == null || saldoGolTimeVisitante == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O saldo de gol nao pode ser nulo. Preencha com um valor igual ou maior que zero.");
+        if(saldoGolTimeCasa == null || saldoGolTimeVisitante == null || saldoGolTimeCasa < 0 || saldoGolTimeVisitante < 0) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O saldo de gol nao pode ser nulo ou negativo. Preencha com um valor igual ou maior que zero.");
         }
     }
 

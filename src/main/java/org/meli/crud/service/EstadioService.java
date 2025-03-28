@@ -22,6 +22,7 @@ public class EstadioService {
 
     public void createEstadio(EstadioDTO estadioDTO) {
         if(!estadioRepository.existsByNome(estadioDTO.getNome())) {
+            validarNome(estadioDTO.getNome());
             Estadio estadio = new Estadio();
             estadio.setNome(estadioDTO.getNome());
             this.estadioRepository.save(estadio);
@@ -30,6 +31,7 @@ public class EstadioService {
             throw new ResponseStatusException(HttpStatus.CONFLICT , "Já existe um estádio com o mesmo nome.");
         }
     }
+
 
     public void updateEstadio(EstadioDTO estadioDTO, Long id) {
         validarNome(estadioDTO.getNome());
@@ -41,12 +43,7 @@ public class EstadioService {
                 estadioRepository.save(estadio);
             }
             else{
-                if(estadio.getId().equals(id)){
-                    estadioRepository.save(estadio);
-                }
-                else{
-                    throw new ResponseStatusException(HttpStatus.CONFLICT, "Já existe um estádio cadastrado com essas características.");
-                }
+                throw new ResponseStatusException(HttpStatus.CONFLICT, "Já existe um estádio cadastrado com essas características.");
             }
         }
         else{
@@ -78,7 +75,7 @@ public class EstadioService {
 
     //MÉTODOS DE VALIDACAO
     public void validarNome(String nome) {
-        if(nome == null || nome.length() < 3) {
+        if(nome == null || nome.length() < 4) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O nome do estádio deve ser preenchido contendo ao menos 3 caracteres.");
         }
     }

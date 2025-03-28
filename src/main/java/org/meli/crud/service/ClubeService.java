@@ -22,6 +22,9 @@ public class ClubeService {
     }
 
     public void createClube(ClubeDTO clubeDTO) {
+        if(clubeDTO.getNome() == null || clubeDTO.getNome().isEmpty() || clubeDTO.getEstado() == null || clubeDTO.getEstado().isEmpty() || clubeDTO.getFundacao() == null || clubeDTO.isAtivo()) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "É esperado o nome, data de fundacao e status do clube.");
+        }
         validarNome(clubeDTO.getNome());
         validarEstado(clubeDTO.getEstado());
         validarDataFundacao(clubeDTO.getFundacao());
@@ -100,8 +103,6 @@ public class ClubeService {
         else{
             throw new ResponseStatusException(HttpStatus.NOT_FOUND , "O clube não foi encontrado na base de dados.");
         }
-
-
     }
 
     public List<ClubeDTO> getAllClubes() {
@@ -136,7 +137,7 @@ public class ClubeService {
 
         boolean isSiglaExistente = estados.contains(estado.toUpperCase());
 
-        if (!isSiglaExistente && estado.length() != 2){
+        if (!isSiglaExistente || estado.length() != 2){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O estado deve conter duas letras e deve ser um estado válido, como SP.");
         }
     }
