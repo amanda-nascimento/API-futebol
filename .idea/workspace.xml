@@ -5,24 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baac4c32-7544-4cd8-9de1-a9511d852383" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/config/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/config/SwaggerConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/EstadioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/EstadioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PartidaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PartidaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PetController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/ClubeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/meli/crud/service/ClubeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/meli/crud/ClubeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/meli/crud/ClubeServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/meli/crud/CrudApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/meli/crud/PetControllerTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/service/ClubeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/service/ClubeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/meli/crud/ClubeServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/meli/crud/ClubeServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/meli/crud/CrudApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/meli/crud/PetControllerTest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/meli/crud/PetControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/config/SwaggerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/controller/ClubeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/controller/ClubeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/controller/EstadioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/controller/EstadioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/meli/crud/controller/PartidaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/meli/crud/controller/PartidaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/crud-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/crud-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/crud-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/crud-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,16 +51,11 @@
     &quot;accountId&quot;: &quot;d317aca1-bee6-49a0-9d04-d9b9bc530539&quot;
   }
 }</component>
-  <component name="JavaAutoRunManager">
-    <enabled-run-configurations>
-      <run-configuration type="JUnit" name="PetControllerTest.testGetPets" />
-    </enabled-run-configurations>
-  </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -72,48 +65,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.ClubeServiceTest.executor": "Run",
-    "JUnit.ClubeServiceTest.testCreateClube_MissingName_ThrowsException.executor": "Run",
-    "JUnit.ClubeServiceTest.testCreateClube_Success.executor": "Debug",
-    "JUnit.ClubeServiceTest.validaNomeClube_Error.executor": "Run",
-    "JUnit.ClubeServiceTest.validarEstado_Error_2LetrasInvalido.executor": "Debug",
-    "JUnit.ClubeServiceTest.validarEstado_Error_Invalido.executor": "Coverage",
-    "JUnit.CrudApplicationTests.executor": "Run",
-    "JUnit.PetControllerTest.testGetPets.executor": "Debug",
-    "JUnit.PetControllerTest.testGetPets_201.executor": "Debug",
-    "JUnit.PetControllerTest.testGetPets_400.executor": "Debug",
-    "Maven.crud [clean].executor": "Run",
-    "Maven.crud [install].executor": "Run",
-    "Maven.crud [test].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.CrudApplication.executor": "Debug",
-    "git-widget-placeholder": "developer",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/amdnasciment/Documents/GitHub/API-futebol",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.ClubeServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClubeServiceTest.testCreateClube_MissingName_ThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClubeServiceTest.testCreateClube_Success.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ClubeServiceTest.validaNomeClube_Error.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ClubeServiceTest.validarEstado_Error_2LetrasInvalido.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ClubeServiceTest.validarEstado_Error_Invalido.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.CrudApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PetControllerTest.testGetPets.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.PetControllerTest.testGetPets_201.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.PetControllerTest.testGetPets_400.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven.crud [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crud [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crud [site].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.crud [test].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CrudApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;developer&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/amdnasciment/Documents/GitHub/API-futebol&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.CrudApplication">
     <configuration name="ClubeServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crud" />
@@ -251,7 +245,9 @@
       <workItem from="1741613227944" duration="1328000" />
       <workItem from="1741614946118" duration="2602000" />
       <workItem from="1741783516650" duration="8263000" />
-      <workItem from="1743108503938" duration="16933000" />
+      <workItem from="1743108503938" duration="19215000" />
+      <workItem from="1743426124581" duration="2405000" />
+      <workItem from="1743447598659" duration="639000" />
     </task>
     <servers />
   </component>
@@ -283,7 +279,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/EstadioController.java</url>
-          <line>29</line>
+          <line>27</line>
           <properties class="org.meli.crud.controller.EstadioController" method="createEstadio">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -292,7 +288,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/EstadioController.java</url>
-          <line>41</line>
+          <line>39</line>
           <properties class="org.meli.crud.controller.EstadioController" method="updateEstadio">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -301,7 +297,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/EstadioController.java</url>
-          <line>52</line>
+          <line>50</line>
           <properties class="org.meli.crud.controller.EstadioController" method="getEstadio">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -319,7 +315,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/EstadioController.java</url>
-          <line>62</line>
+          <line>60</line>
           <properties class="org.meli.crud.controller.EstadioController" method="getAllEstadios">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -328,7 +324,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PartidaController.java</url>
-          <line>29</line>
+          <line>27</line>
           <properties class="org.meli.crud.controller.PartidaController" method="createPartida">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -364,7 +360,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/PartidaController.java</url>
-          <line>73</line>
+          <line>71</line>
           <properties class="org.meli.crud.controller.PartidaController" method="deactivatePartida">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -427,7 +423,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/controller/ClubeController.java</url>
-          <line>38</line>
+          <line>40</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -479,11 +475,6 @@
           <url>jar://$USER_HOME$/Library/Java/JavaVirtualMachines/corretto-17.0.13/Contents/Home/lib/src.zip!/java.base/java/lang/NumberFormatException.java</url>
           <line>35</line>
           <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/config/SwaggerConfig.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/meli/crud/CrudApplication.java</url>

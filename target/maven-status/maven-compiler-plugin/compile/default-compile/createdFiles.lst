@@ -23,6 +23,5 @@ org/meli/crud/controller/RetrospectoController.class
 org/meli/crud/dto/RetrospectoDTO.class
 org/meli/crud/model/Pet.class
 org/meli/crud/exception/ErrosDeBaseDeDados.class
-org/meli/crud/config/SwaggerConfig.class
 org/meli/crud/CrudApplication.class
 org/meli/crud/controller/ClubeController.class
