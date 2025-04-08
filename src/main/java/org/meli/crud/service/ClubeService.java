@@ -12,6 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class ClubeService {
@@ -22,12 +23,14 @@ public class ClubeService {
     }
 
     public void createClube(ClubeDTO clubeDTO) {
-        if(clubeDTO.getNome() == null || clubeDTO.getNome().isEmpty() || clubeDTO.getEstado() == null || clubeDTO.getEstado().isEmpty() || clubeDTO.getFundacao() == null || clubeDTO.isAtivo()) {
+        if(clubeDTO.getNome() == null || clubeDTO.getNome().isEmpty() || clubeDTO.getEstado() == null || clubeDTO.getEstado().isEmpty() || clubeDTO.getFundacao() == null ) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "É esperado o nome, data de fundacao e status do clube.");
         }
+
         validarNome(clubeDTO.getNome());
         validarEstado(clubeDTO.getEstado());
         validarDataFundacao(clubeDTO.getFundacao());
+
 
         if(!clubeRepository.existsByNomeAndEstado(clubeDTO.getNome(), clubeDTO.getEstado())) {
             Clube clube = new Clube();
@@ -38,7 +41,7 @@ public class ClubeService {
             this.clubeRepository.save(clube);
         }
         else{
-            throw new ConflitosDadosException("Já existe um clube com as mesmas características cadastrado.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "É esperado o nome, data de fundacao e status do clube.");
         }
     }
 
@@ -47,40 +50,24 @@ public class ClubeService {
         validarEstado(clubeDTO.getEstado());
         validarDataFundacao(clubeDTO.getFundacao());
 
-        if(clubeRepository.existsById(id)) {
-            Clube clube = clubeRepository.findById(id).get();
+        Clube clube = clubeRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "O clube não foi encontrado na base de dados."));
 
-            if(!clubeDTO.getNome().equals(clube.getNome()) && !clubeDTO.getNome().isBlank()) {
-                clube.setNome(clubeDTO.getNome());
-            }
-            if(!clubeDTO.getEstado().equals(clube.getEstado()) && !clubeDTO.getEstado().isBlank()) {
-                clube.setEstado(clubeDTO.getEstado());
-            }
-
-            if(!clubeDTO.getFundacao().equals(clube.getFundacao())) {
-                clube.setFundacao(clubeDTO.getFundacao());
-            }
-
-            if(clubeRepository.existsByNomeAndEstado(clubeDTO.getNome(), clubeDTO.getEstado()) ) {
-                clubeRepository.save(clube);
-            }
-            else{
-                if(clube.getId().equals(id)){
-                    clubeRepository.save(clube);
-                }
-                else{
-                    throw new ResponseStatusException(HttpStatus.CONFLICT, "Já existe um clube cadastrado com essas características.");
-                }
-            }
+        if (clubeRepository.existsByNomeAndEstado(clubeDTO.getNome(), clubeDTO.getEstado())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Já existe um clube cadastrado com essas características.");
         }
-        else{
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND , "O clube não foi encontrado na base de dados.");
-        }
+
+        clube.setNome(clubeDTO.getNome());
+        clube.setEstado(clubeDTO.getEstado());
+        clube.setFundacao(clubeDTO.getFundacao());
+        clubeRepository.save(clube);
     }
 
     public void deactivateClube(Long id) {
         if(clubeRepository.existsById(id)) {
-            Clube clube = clubeRepository.findById(id).get();
+            Clube clube = clubeRepository.findById(id)
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Clube não encontrado"));
+
             clube.setAtivo(false);
             clubeRepository.save(clube);
         }
@@ -91,7 +78,8 @@ public class ClubeService {
 
     public ClubeDTO getClube(Long id) {
         if(clubeRepository.existsById(id)) {
-            Clube clube = clubeRepository.findById(id).get();
+            Clube clube = clubeRepository.findById(id)
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Clube não encontrado"));
             ClubeDTO clubeDTO = new ClubeDTO();
             clubeDTO.setNome(clube.getNome());
             clubeDTO.setEstado(clube.getEstado());
@@ -107,6 +95,10 @@ public class ClubeService {
     public List<ClubeDTO> getAllClubes() {
         List<Clube> clubes = clubeRepository.findAll();
         List<ClubeDTO> clubeDTOs = new ArrayList<>();
+        if (clubes.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nenhum clube encontrado");
+        }
+
         if (this.clubeRepository.findAll().toArray().length > 0) {
             for(Clube clube : clubes) {
                 ClubeDTO clubeDTO = new ClubeDTO();
@@ -122,7 +114,6 @@ public class ClubeService {
     }
 
 
-    //MÉTODOS DE VALIDACAO
     public void validarNome(String nome) {
         if(nome == null || nome.length() < 3) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O nome deve ser preenchido contendo ao menos 3 caracteres.");
@@ -147,10 +138,6 @@ public class ClubeService {
         }
     }
 
-    public void validarDataFundacaoEpartida(LocalDate dataFundacao, LocalDate dataPartida) {
-        if(dataFundacao == null || dataFundacao.isAfter(LocalDate.now())) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "A data deve ser menor ou igual a data de hoje.");
-        }
-    }
+
 
 }

@@ -16,8 +16,6 @@ import java.util.List;
 public class ClubeController {
     @Autowired
     private ClubeService clubeService;
-    @Autowired
-    private ClubeRepository clubeRepository;
 
     @Operation(summary = "Cria clube", description = "Este endpoint cria um clube.")
     @ApiResponse(responseCode = "201")

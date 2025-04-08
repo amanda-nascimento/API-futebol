@@ -10,6 +10,4 @@ import java.util.Optional;
 public interface ClubeRepository extends JpaRepository<Clube, Long> {
     boolean existsByNomeAndEstado(String nome, String estado);
     Optional<Clube> findById(Long id);
-
-    Clube findById(Clube timeCasa);
 }

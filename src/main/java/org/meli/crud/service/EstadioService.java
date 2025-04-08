@@ -35,21 +35,18 @@ public class EstadioService {
 
     public void updateEstadio(EstadioDTO estadioDTO, Long id) {
         validarNome(estadioDTO.getNome());
-        if(estadioRepository.existsById(id)) {
-            Estadio estadio = estadioRepository.findById(id).get();
-            estadio.setNome(estadioDTO.getNome());
 
-            if(!estadioRepository.existsByNome(estadioDTO.getNome())) {
-                estadioRepository.save(estadio);
-            }
-            else{
-                throw new ResponseStatusException(HttpStatus.CONFLICT, "Já existe um estádio cadastrado com essas características.");
-            }
+        Estadio estadio = estadioRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "O estádio não foi encontrado na base de dados."));
+
+        if (estadioRepository.existsByNome(estadioDTO.getNome())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Já existe um estádio cadastrado com esse nome.");
         }
-        else{
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND , "O estádio não foi encontrado na base de dados.");
-        }
+
+        estadio.setNome(estadioDTO.getNome());
+        estadioRepository.save(estadio);
     }
+
 
     public EstadioDTO getEstadio(Long id) {
         if(estadioRepository.existsById(id)) {
@@ -63,15 +60,6 @@ public class EstadioService {
         }
     }
 
-    public void deleteEstadio(Long id) {
-        if(estadioRepository.existsById(id)) {
-            Estadio estadio = estadioRepository.findById(id).get();
-            estadioRepository.delete(estadio);
-        }
-        else{
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND , "O Estadio não foi encontrado na base de dados.");
-        }
-    }
 
     //MÉTODOS DE VALIDACAO
     public void validarNome(String nome) {

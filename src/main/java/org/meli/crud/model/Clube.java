@@ -15,7 +15,7 @@ import lombok.Setter;
 public class Clube {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column(length = 50, nullable = false)
     private String nome;
@@ -26,6 +26,5 @@ public class Clube {
     @Column(nullable = false)
     private LocalDate fundacao;
 
-    @Column(nullable = false)
     private boolean ativo;
 }
