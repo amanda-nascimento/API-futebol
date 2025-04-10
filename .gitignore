@@ -1,0 +1,28 @@
+# Diretórios comuns a projetos Java
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Diretórios de IDEs
+/.idea/
+/*.iml
+
+# Arquivos de build do Maven
+/logs/
+/*.class
+*.jar
+*.war
+*.ear
+
+# Configurações específicas de ambiente
+.env
+*.local
+
+# Arquivos de testes temporários
+/test-output/
