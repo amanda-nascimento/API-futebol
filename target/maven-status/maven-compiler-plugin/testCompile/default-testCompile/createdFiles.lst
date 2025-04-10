@@ -1,1 +1,6 @@
+org/meli/crud/PartidaControllerTest.class
 org/meli/crud/ClubeServiceTest.class
+org/meli/crud/EstadioServiceTest.class
+org/meli/crud/PartidaServiceTest.class
+org/meli/crud/ClubeControllerTest.class
+org/meli/crud/EstadioControllerTest.class

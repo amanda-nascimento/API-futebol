@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.meli.crud.controller.EstadioController;
 import org.meli.crud.dto.EstadioDTO;
-import org.meli.crud.service.ClubeService;
 import org.meli.crud.service.EstadioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
