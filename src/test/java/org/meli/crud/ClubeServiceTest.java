@@ -234,17 +234,24 @@ public class ClubeServiceTest {
         });
     }
 
-
-
-
     @Test
     void getAllClubes_Success() {
-        when(clubeRepository.findAll()).thenReturn(List.of(new Clube()));
+        Clube clube = new Clube();
+        clube.setNome("Palmeiras");
+        clube.setEstado("SP");
+        clube.setFundacao(LocalDate.of(1914, 8, 26));
+        clube.setAtivo(true);
 
-        assertDoesNotThrow(() ->{
-            clubeService.getAllClubes();
-        });
+        when(clubeRepository.findAll()).thenReturn(List.of(clube));
+
+        List<ClubeDTO> clubes = clubeService.getAllClubes();
+
+        assertFalse(clubes.isEmpty());
+        assertEquals(1, clubes.size());
+        assertEquals("Palmeiras", clubes.get(0).getNome());
     }
+
+
 
     @Test
     void getAllClubes_ErrorIfClubesNotFound() {
@@ -254,5 +261,22 @@ public class ClubeServiceTest {
             clubeService.getAllClubes();
         });
     }
+
+
+
+    @Test
+    void getAllClubes_ErrorIfEmpty() {
+        when(clubeRepository.findAll()).thenReturn(Collections.emptyList());
+
+        ResponseStatusException erro = assertThrows(ResponseStatusException.class, () -> {
+            clubeService.getAllClubes();
+        });
+
+        assertEquals(HttpStatus.NOT_FOUND, erro.getStatusCode());
+        assertEquals("Nenhum clube encontrado", erro.getReason());
+    }
+
+
+
 
 }

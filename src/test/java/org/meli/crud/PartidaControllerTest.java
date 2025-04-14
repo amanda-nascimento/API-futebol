@@ -125,6 +125,25 @@ public class PartidaControllerTest {
     }
 
     @Test
+    void testUpdatePartida_Success() throws Exception {
+        PartidaDTO partidaDTO = new PartidaDTO();
+        partidaDTO.setDataHoraPartida(LocalDateTime.of(2026, 1, 1, 1, 1));
+        partidaDTO.setIdEstadio(1L);
+        partidaDTO.setIdTimeCasa(1L);
+        partidaDTO.setIdTimeVisitante(2L);
+        partidaDTO.setResultado(TimeVencedor.EMPATE);
+        partidaDTO.setSaldoGolsTimeVisitante(1);
+        partidaDTO.setSaldoGolsTimeCasa(1);
+
+        mockMvc.perform(put("/partidas/atualizar/1")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(partidaDTO)))
+                .andExpect(status().isOk())
+                .andExpect(content().string("Partida atualizada com sucesso!"));
+    }
+
+
+    @Test
     void testDeletePartida_Success() throws Exception {
         mockMvc.perform(delete("/partidas/excluir/1"))
                 .andExpect(status().isNoContent())

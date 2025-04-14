@@ -84,7 +84,7 @@ public class PartidaService {
         return partida;
     }
 
-    private TimeVencedor definirResultado(PartidaDTO partidaDTO) {
+    public TimeVencedor definirResultado(PartidaDTO partidaDTO) {
         if (partidaDTO.getResultado() != null) {
             return partidaDTO.getResultado();
         }
